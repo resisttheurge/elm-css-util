@@ -1,4 +1,4 @@
-module Css.Helpers (toCssIdentifier, identifierToString) where
+module Css.Helpers exposing (toCssIdentifier, identifierToString)
 
 {-| Utility functions for elm-css.
 
@@ -15,11 +15,11 @@ and stripping out invalid characters.
 -}
 toCssIdentifier : a -> String
 toCssIdentifier identifier =
-  identifier
-    |> toString
-    |> String.trim
-    |> Regex.replace Regex.All (Regex.regex "\\s+") (\_ -> "-")
-    |> Regex.replace Regex.All (Regex.regex "[^a-zA-Z0-9_-]") (\_ -> "")
+    identifier
+        |> toString
+        |> String.trim
+        |> Regex.replace Regex.All (Regex.regex "\\s+") (\_ -> "-")
+        |> Regex.replace Regex.All (Regex.regex "[^a-zA-Z0-9_-]") (\_ -> "")
 
 
 {-| Converts an arbitrary identifier to a valid CSS identifier, then prepends
@@ -27,4 +27,4 @@ the given namespace.
 -}
 identifierToString : a -> b -> String
 identifierToString name identifier =
-  (toCssIdentifier name) ++ (toCssIdentifier identifier)
+    (toCssIdentifier name) ++ (toCssIdentifier identifier)
