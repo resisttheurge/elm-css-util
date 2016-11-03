@@ -1,5 +1,5 @@
 {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "summary": "Utility functions shared by elm-css and elm-css-helpers.",
     "repository": "https://github.com/rtfeldman/elm-css-util.git",
     "license": "BSD-3-Clause",
